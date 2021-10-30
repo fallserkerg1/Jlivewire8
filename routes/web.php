@@ -14,7 +14,7 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/course', [PageController::class, 'course'])->name('course');
+Route::get('/course/{course:slug}', [PageController::class, 'course'])->name('course');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
